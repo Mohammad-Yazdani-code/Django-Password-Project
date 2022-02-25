@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(196, 233, 255);
+        }
+        div{
+            margin: auto;
+            font-family: monospace;
+            display: flex;
+        }
+        p.title{
+            margin: auto;
+            border-bottom: solid gray;
+        }
+        form{
+            margin: auto;
+            
+        }
+        div.link{
+            display: flex;
+            justify-content: center;
+            
+           
+            
+        }
+        a{
+           
+            
+            text-decoration: none;
+            text-align: center;
+            
+        }
+        p.link{
+            text-align: center;
+            border-top: solid cadetblue;
+            padding-top: 10px;
+            width: 500px;
+        }
+        .btn{
+            background-color:rgb(4, 175, 255);
+            color: rgb(255, 255, 255);
+            border: none;
+            width: 90px;
+            height: 25px;
+            text-align: center;
+
+            border-radius: 10px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+        }
+        .btn:hover{
+            cursor: pointer;
+        }
+        .select{
+            border-radius: 10px;
+            width: 50px;
+            padding-left: 6px;
+            
+        }
+        .submit{
+    
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <h1>
+        <div>
+            <p class="title"> Password Generator</p>
+            
+        </div>
+    </h1>
+    <div>
+        <form action="{% url 'Password'%}">
+            <label for="select">Choose  Password length : </label>
+            <select name="length" class="select">
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12" selected = 'selected'>12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                
+            </select>
+            <br>
+            <input type="checkbox" name="Uppercase" id="Uppercase"> Uppercase
+            <br>
+            <input type="checkbox" name="Numbers" id="Numbers"> Numbers
+            <br>
+            <input type="checkbox" name="special" id="special"> special characters
+            <br>
+            <br>
+            <div class="submit">
+                <input type="submit" value="Generate" class="btn">
+            </div>   
+            
+           
+
+        </form>
+    </div>
+    <br>
+    <div  class = 'link'>
+        <p class="link"><a href="{% url 'about'%}">About US</a></p>
+    </div>
+</body>
+</html>
